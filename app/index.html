@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Real War Thunder</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <header>
+        <h1>REAL WAR THUNDER</h1>
+        <div class="scoreboard">
+            <p class="score" id="score0"></p>
+            <p class="score" id="score1"></p>
+            <p class="score" id="score2"></p>
+        </div>
+    </header>
+  <body>
+        <div id="cover" class="hidden"><div id="choiceBox" class="hidden">
+            <p class="hidden">Choose your name:</p>
+            <input id="nameField" class="hidden">
+            <p class="hidden">Choose your color:</p>
+            <div id="colors" class="hidden">
+                <button id="greenButton" class="color green" onclick="clickColor('green')"></button>
+                <button id="redButton" class="color red" onclick="clickColor('red')"></button>
+                <button id="blueButton" class="color blue" onclick="clickColor('blue')"></button>
+                <button id="orangeButton" class="color orange" onclick="clickColor('orange')"></button>
+                <button id="purpleButton" class="color purple" onclick="clickColor('purple')"></button>  
+                <button id="plumButton" class="color plum" onclick="clickColor('plum')"></button> 
+                <button id="cyanButton" class="color cyan" onclick="clickColor('cyan')"></button> 
+                <button id="chartreuseButton" class="color chartreuse" onclick="clickColor('chartreuse')"></button>               
+            </div>
+            <button id="startButton" type="submit" onclick="startGame()">START GAME</button>
+        </div></div>
+        <!--<div class="game_board"> -->
+            <canvas id="myCanvas" width="1000" height="500"></canvas>
+        <!--</div>-->
+        <div class="chat">
+        <ul id="messages"></ul>
+        <form id="form" action="">
+            <input id="input" autocomplete="off" />
+            <button>Send</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+</html>
+
+<!--
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+
+            var form = document.getElementById('form');
+            var input = document.getElementById('input');
+            let button = document.getElementById('send_chat')
+            
+            document.getElementById('send_chat').onclick = () => {
+            if (button.style.color == "red") {
+            button.style.color = "yellow";
+    }
+    else {
+        button.style.color = "red"
+    }}
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (input.value) {
+                    socket.emit('chat message', input.value);
+                    //input.value = '';
+                }
+            });
+        </script>
+
+        <div class="canvas">
+
+        </div>
+
+        <div class="chat">
+            <ul id="messages">
+                <li>chatt</li>
+                <li>meddelande</li>
+            </ul>
+            <form id="form" action="">
+                <input placeholder="message" id="input">
+                <button id="send_chat">Send</button>
+            </form>
+        </div>
+    </body>
+</html> -->
